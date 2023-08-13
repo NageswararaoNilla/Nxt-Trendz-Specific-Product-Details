@@ -76,3 +76,18 @@
   width: 20px;
   margin-bottom: 3px;
 }
+
+.card-link {
+  text-decoration: none;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .product-container {
+    flex-direction: row;
+  }
+}
