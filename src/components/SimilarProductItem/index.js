@@ -1,35 +1,30 @@
 import './index.css'
 
 const SimilarProductItem = props => {
-  const {productCardDetails} = props
-  const {
-    title,
-    imageUrl,
-    // style,
-    price,
-    // description,
-    brand,
-    // totalReviews,
-    rating,
-    // availability,
-  } = productCardDetails
+  const {productDetails} = props
+  const {title, brand, imageUrl, rating, price} = productDetails
 
   return (
-    <div>
-      <img src={imageUrl} alt="similar product" />
-      <p>{title}</p>
-      <p>{brand}</p>
-      <div>
-        <p>Rs {price}/- </p>
-        <p>
-          {rating}
+    <li className="similar-product-item">
+      <img
+        src={imageUrl}
+        className="similar-product-image"
+        alt={`similar product ${title}`}
+      />
+      <p className="similar-product-title">{title}</p>
+      <p className="similar-products-brand">by {brand}</p>
+      <div className="similar-product-price-rating-container">
+        <p className="similar-product-price">Rs {price}/-</p>
+        <div className="similar-product-rating-container">
+          <p className="similar-product-rating">{rating}</p>
           <img
             src="https://assets.ccbp.in/frontend/react-js/star-img.png"
             alt="star"
+            className="similar-product-star"
           />
-        </p>
+        </div>
       </div>
-    </div>
+    </li>
   )
 }
 
